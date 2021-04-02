@@ -1,0 +1,28 @@
+name: demo
+version: 1.0.0
+summary: demo
+description: demo that does everything!
+
+confinement: strict
+base: core18
+grade: stable
+
+slots:
+  dbus-demo:
+    interface: dbus
+    bus: session
+    name: org.example.demo
+    
+apps:
+  demo:
+    command: demo
+    extensions: [flutter-master]
+    plugs:
+    - network
+    slots:
+      - dbus-demo
+parts:
+  demo:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart

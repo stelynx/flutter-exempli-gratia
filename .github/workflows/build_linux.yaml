@@ -1,0 +1,30 @@
+on: push
+name: Build Linux
+jobs:
+  build:
+    name: Build ${{ matrix.project }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        project: [
+          widgets/cupertino/cupertino_list_section/base,
+          widgets/cupertino/cupertino_list_section/base_with_leading,
+          widgets/cupertino/cupertino_list_section/inset_grouped,
+          widgets/cupertino/cupertino_list_section/inset_grouped_with_leading,
+        ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "master"
+      - run: sudo snap install snapcraft --classic
+      - run: sudo snap install multipass --classic
+      - run: cp snapcraft.yaml ${{ matrix.project }}
+      - run: cd ${{ matrix.project }}
+      - run: flutter pub get
+      - run: snapcraft
