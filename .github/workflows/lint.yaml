@@ -22,6 +22,7 @@ jobs:
       - uses: subosito/flutter-action@master
         with:
           channel: "master"
-      - run: cd ${{ matrix.project }}
-      - run: pwd && ls && flutter pub get
-      - run: flutter analyze
+      - run: |
+          cd ${{ matrix.project }}
+          pwd && ls && flutter pub get
+          flutter analyze
