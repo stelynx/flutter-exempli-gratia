@@ -8,10 +8,10 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         project: [
-          widgets/cupertino/cupertino_list_section/base,
-          widgets/cupertino/cupertino_list_section/base_with_leading,
-          widgets/cupertino/cupertino_list_section/inset_grouped,
-          widgets/cupertino/cupertino_list_section/inset_grouped_with_leading,
+          # widgets/cupertino/cupertino_list_section/base,
+          # widgets/cupertino/cupertino_list_section/base_with_leading,
+          # widgets/cupertino/cupertino_list_section/inset_grouped,
+          # widgets/cupertino/cupertino_list_section/inset_grouped_with_leading,
         ]
 
     steps:
