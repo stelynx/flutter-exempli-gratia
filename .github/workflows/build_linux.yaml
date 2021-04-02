@@ -26,5 +26,5 @@ jobs:
       - run: sudo snap install multipass --classic
       - run: cp snapcraft.yaml ${{ matrix.project }}
       - run: cd ${{ matrix.project }}
-      - run: flutter pub get
+      - run: pwd && ls && flutter pub get
       - run: snapcraft

@@ -23,5 +23,5 @@ jobs:
         with:
           channel: "master"
       - run: cd ${{ matrix.project }}
-      - run: flutter pub get
+      - run: pwd && ls && flutter pub get
       - run: flutter build ios --release --no-codesign

@@ -24,5 +24,5 @@ jobs:
           channel: "master"
       - uses: microsoft/setup-msbuild@v1.0.2
       - run: cd ${{ matrix.project }}
-      - run: flutter pub get
+      - run: pwd && ls && flutter pub get
       - run: flutter build windows
