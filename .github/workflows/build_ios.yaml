@@ -12,6 +12,7 @@ jobs:
           # widgets/cupertino/cupertino_list_section/base_with_leading,
           # widgets/cupertino/cupertino_list_section/inset_grouped,
           # widgets/cupertino/cupertino_list_section/inset_grouped_with_leading,
+          widgets/cupertino/cupertino_sliver_navigation_bar,
         ]
 
     steps:
