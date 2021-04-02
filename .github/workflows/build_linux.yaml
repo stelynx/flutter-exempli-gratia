@@ -22,9 +22,10 @@ jobs:
       - uses: subosito/flutter-action@master
         with:
           channel: "master"
-      - run: sudo snap install snapcraft --classic
-      - run: sudo snap install multipass --classic
-      - run: cp snapcraft.yaml ${{ matrix.project }}
-      - run: cd ${{ matrix.project }}
-      - run: pwd && ls && flutter pub get
-      - run: snapcraft
+      - run: |
+          sudo snap install snapcraft --classic
+          sudo snap install multipass --classic
+          cp snapcraft.yaml ${{ matrix.project }}
+          cd ${{ matrix.project }}
+          pwd && ls && flutter pub get
+          snapcraft
